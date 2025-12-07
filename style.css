@@ -305,8 +305,88 @@ footer { text-align: center; padding: 40px; color: #8D6E63; font-size: 1rem; }
     }
 }
 
+/* 📱 모바일 전용 스타일 (맨 아래에 붙여넣으세요) */
 @media (max-width: 768px) {
-    body { font-size: 16px; }
-    .hero h1 { font-size: 2.5rem; }
-    nav { flex-direction: column; gap: 15px; }
+    
+    /* 1. 전체 글씨 크기 줄이기 */
+    body {
+        font-size: 16px; /* 18px -> 16px로 축소 */
+    }
+
+    /* 2. 섹션 간격 좁히기 (너무 휑하지 않게) */
+    section {
+        padding: 60px 5%; /* 여백 축소 */
+    }
+
+    /* 3. 히어로 섹션 (제목 및 타자기 효과) */
+    .hero {
+        padding: 80px 20px;
+    }
+    .hero h1 {
+        font-size: 2.2rem; /* 제목 크기 줄임 */
+    }
+    .hero-emoji {
+        font-size: 4rem;
+    }
+    
+    /* 타자기 글씨가 너무 크면 두 줄로 깨지므로 축소 */
+    .typing-container {
+        font-size: 1.1rem; 
+        height: auto;       /* 높이 제한 해제 */
+        margin-bottom: 15px;
+        min-height: 50px;   /* 최소 높이 확보 */
+    }
+
+    /* 4. 카드 그리드 (폰에서는 한 줄에 하나씩) */
+    .grid {
+        grid-template-columns: 1fr; /* 1열로 고정 */
+        gap: 25px;
+    }
+    .card {
+        padding: 25px; /* 카드 내부 여백 축소 */
+    }
+
+    /* 5. ⭐ 연락처 박스 & 이메일 튀어나옴 해결 ⭐ */
+    .contact-box {
+        padding: 30px 20px; /* 박스 패딩 줄임 */
+        width: 100%;        /* 너비 꽉 채우기 */
+    }
+
+    .contact-link {
+        font-size: 1rem;       /* 글씨 크기 줄임 */
+        flex-direction: column; /* 아이콘을 글자 위로 보냄 (공간 확보) */
+        gap: 10px;
+        word-break: break-all;  /* ⚠️ 긴 이메일 강제 줄바꿈 (핵심!) */
+        text-align: center;
+    }
+
+    /* 6. 네비게이션 메뉴 */
+    nav {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    .logo {
+        margin-bottom: 15px;
+    }
+    .nav-links {
+        display: flex;
+        flex-direction: column; /* 세로로 나열 */
+        gap: 15px;
+        width: 100%;
+        text-align: center;
+    }
+    .nav-links a {
+        margin-left: 0; /* 기존 여백 제거 */
+        display: block;
+        padding: 5px 0;
+    }
+
+    /* 7. 태그 정렬 */
+    .tags {
+        gap: 8px;
+    }
+    .tag {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
 }
